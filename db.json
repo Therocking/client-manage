@@ -1,0 +1,96 @@
+{
+  "users": [
+    {
+      "id": "Jq5Rz8WmE1p",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "email": "alice.johnson@example.com",
+      "photo": "https://api.dicebear.com/7.x/pixel-art//svg?seed=Alice",
+      "addresses": [
+        {
+          "id": "uT2xV7nM4cA",
+          "street": "123 Maple Street",
+          "city": "San Francisco",
+          "country": "USA",
+          "zip": "94102",
+          "userId": "Jq5Rz8WmE1p"
+        },
+        {
+          "id": "H9sD3kLpQw6",
+          "street": "456 Oak Avenue",
+          "city": "Los Angeles",
+          "country": "USA",
+          "zip": "90001",
+          "userId": "Jq5Rz8WmE1p"
+        }
+      ]
+    },
+    {
+      "id": "bN6yK2hT9Ld",
+      "firstName": "Bob",
+      "lastName": "Martinez",
+      "email": "bob.martinez@example.com",
+      "photo": "https://api.dicebear.com/7.x/pixel-art//svg?seed=Bob",
+      "addresses": [
+        {
+          "id": "mP4rYt8BvK2",
+          "street": "789 Pine Road",
+          "city": "Chicago",
+          "country": "USA",
+          "zip": "60601",
+          "userId": "bN6yK2hT9Ld"
+        }
+      ]
+    },
+    {
+      "firstName": "jose",
+      "lastName": "genao",
+      "email": "correo@gmail.com",
+      "photo": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Luna",
+      "id": "caLvTgkFfB0"
+    }
+  ],
+  "addresses": [
+    {
+      "id": "uT2xV7nM4cA",
+      "street": "123 Maple Street",
+      "city": "San Francisco",
+      "country": "USA",
+      "zip": "94102",
+      "userId": "Jq5Rz8WmE1p"
+    },
+    {
+      "id": "mP4rYt8BvK2",
+      "street": "789 Pine Road",
+      "city": "Chicago",
+      "country": "USA",
+      "zip": "60601",
+      "userId": "bN6yK2hT9Ld"
+    },
+    {
+      "id": "Zx7Nw3QvT9s",
+      "street": "321 Elm Boulevard",
+      "city": "New York",
+      "country": "USA",
+      "zip": "10001",
+      "userId": null
+    },
+    {
+      "street": "123 Santo Domingo st",
+      "city": "Santo Domingo",
+      "country": "Dominican Republic",
+      "zip": "10107",
+      "userId": "caLvTgkFfB0",
+      "id": "3NCJj3OfB18"
+    },
+    {
+      "street": "a",
+      "city": "a",
+      "country": "a",
+      "zip": "a",
+      "userId": "Jq5Rz8WmE1p",
+      "id": "e-sQ3M1QI9g"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
