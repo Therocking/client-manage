@@ -1,0 +1,5 @@
+db.json
+dist
+node_modules
+.git
+.gitignore

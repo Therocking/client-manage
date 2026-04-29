@@ -26,28 +26,18 @@
       ]
     },
     {
-      "id": "bN6yK2hT9Ld",
-      "firstName": "Bob",
-      "lastName": "Martinez",
-      "email": "bob.martinez@example.com",
-      "photo": "https://api.dicebear.com/7.x/pixel-art//svg?seed=Bob",
-      "addresses": [
-        {
-          "id": "mP4rYt8BvK2",
-          "street": "789 Pine Road",
-          "city": "Chicago",
-          "country": "USA",
-          "zip": "60601",
-          "userId": "bN6yK2hT9Ld"
-        }
-      ]
-    },
-    {
       "firstName": "jose",
       "lastName": "genao",
       "email": "correo@gmail.com",
       "photo": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Luna",
       "id": "caLvTgkFfB0"
+    },
+    {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "email": "alice.johnson@gmail.com",
+      "photo": "https://api.dicebear.com/9.x/pixel-art/svg?seed=John",
+      "id": "ih1PO5V1Qus"
     }
   ],
   "addresses": [
@@ -65,7 +55,7 @@
       "city": "Chicago",
       "country": "USA",
       "zip": "60601",
-      "userId": "bN6yK2hT9Ld"
+      "userId": null
     },
     {
       "id": "Zx7Nw3QvT9s",

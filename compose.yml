@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build: .
+    container_name: client-manager-frontend
+    environment:
+      - VITE_API_URL=http://api:3000
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+  api:
+    image: node:23-alpine
+    container_name: client-manager-api
+    working_dir: /app
+    volumes:
+      - ./data:/app
+    command: sh -c "npm install -g json-server && json-server --watch db.json --host 0.0.0.0 --port 3000"
+    ports:
+      - "3000:3000"
