@@ -10,11 +10,7 @@ interface UserFormProps {
 
 const EMPTY: UserFormData = { firstName: '', lastName: '', email: '', photo: '' };
 
-interface FormErrors {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-}
+type FormErrors = Partial<Record<keyof UserFormData, string>>;
 
 function validateEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);

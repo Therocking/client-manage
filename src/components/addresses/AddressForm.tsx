@@ -10,12 +10,7 @@ interface AddressFormProps {
 
 const EMPTY: AddressFormData = { street: '', city: '', country: '', zip: '' };
 
-interface FormErrors {
-  street?: string;
-  city?: string;
-  country?: string;
-  zip?: string;
-}
+type FormErrors = Partial<Record<keyof AddressFormData, string>>;
 
 export function AddressForm({ initialData, onSubmit, onCancel, isLoading = false }: AddressFormProps) {
   const [form, setForm] = useState<AddressFormData>(EMPTY);
