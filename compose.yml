@@ -10,11 +10,32 @@ services:
       - api
 
   api:
-    image: node:23-alpine
+    build: ./backend
     container_name: client-manager-api
-    working_dir: /app
-    volumes:
-      - ./data:/app
-    command: sh -c "npm install -g json-server && json-server --watch db.json --host 0.0.0.0 --port 3000"
     ports:
       - "3000:3000"
+    environment:
+      - POSTGRES_HOST=database
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=client_manager
+    depends_on:
+      - database
+
+  database:
+    image: postgres:16
+    container_name: client-manager-db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=client_manager
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/database/schema.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:
