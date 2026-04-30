@@ -15,19 +15,61 @@ ClientManager lets you manage clients and their related addresses through a clea
 - React Router v7
 - Axios
 - json-server (mock API)
-- Lucide React (icons)
+- Lucide React
+- Docker
+
+---
+
+### API Routing
+
+All frontend requests are made to `/api/*`.
+
+- In development: handled by Vite proxy
+- In Docker: handled by Nginx proxy
 
 ---
 
 ## 🚀 Getting Started
 
-### 1. Install dependencies
+### Run with Docker
+
+#### 1. Build the images and run the containers
+
+```bash
+  docker compose up -d --build
+```
+
+#### 2. Access the application
+- Frontend: http://localhost:8080
+- API: http://localhost:3000
+
+> **Note**: In local development, the app runs on port 5173 and the API on 3001.
+
+#### How it works
+- The frontend is built with Vite and served by Nginx
+- The API runs using `json-server` inside a container
+- Requests to `/api` are proxied internally to the API container
+
+#### 3. Stop the containers
+
+```bash
+  docker compose down
+```
+
+### Run without Docker
+
+#### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Start the mock API (json-server)
+#### 2. Create a .env file
+```bash
+  cp .env.Template .env
+```
+
+#### 3. Start the mock API (json-server)
 
 Open a terminal and run:
 
@@ -37,7 +79,15 @@ npm run api
 
 This starts json-server at `http://localhost:3001` watching `db.json`.
 
-### 3. Start the development server
+The API data is stored in the `data/db.json` file. Its structure is:
+```json
+{
+  "users": [],
+  "addresses": []
+}
+```
+
+#### 4. Start the development server
 
 Open a **second** terminal and run:
 
@@ -103,26 +153,6 @@ src/
 └── main.tsx                  # React entry point
 ```
 
----
-
-## ✨ Features
-
-- ✅ Full **User CRUD** (create, list, edit, delete)
-- ✅ Full **Address CRUD** per user (multiple addresses per user)
-- ✅ **Slide-in drawer** forms (no forms shown by default)
-- ✅ **Empty state UI** with CTA when no data exists
-- ✅ **Delete confirmation** dialogs
-- ✅ **Form validation** with per-field error messages
-- ✅ **Lazy loading** for user photos (IntersectionObserver)
-- ✅ **Loading and error states** with spinners and retry button
-- ✅ `React.memo`, `useCallback`, `useMemo` for performance
-- ✅ **Responsive design** (mobile + desktop sidebar)
-- ✅ **Dark theme** with glassmorphism card effects
-- ✅ Smooth **animations** (fade, slide, scale)
-- ✅ **React Router v7** with lazy-loaded pages
-
----
-
 ## 🏗️ Data Models
 
 ### User
@@ -133,6 +163,7 @@ interface User {
   lastName: string;
   email: string;
   photo: string;
+  addresses?: Address[];
 }
 ```
 
