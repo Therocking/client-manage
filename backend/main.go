@@ -44,8 +44,8 @@ func main() {
 	r.PATCH("/addresses/:id", addressHandler.Update)
 	r.DELETE("/addresses/:id", addressHandler.Delete)
 
-	log.Println("Server starting on :8080")
-	if err := r.Run(":8080"); err != nil {
+	log.Println("Server starting on :3000")
+	if err := r.Run(":3000"); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}
 }
